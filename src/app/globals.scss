@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://mshaugh.github.io/nerdfont-webfonts/build/inconsolatalgc.css');
+
+html {
+  font-size: 24px;
+}
+
+body {
+  font-family: Inconsolata LGC Nerd Font, monospace;
+}
