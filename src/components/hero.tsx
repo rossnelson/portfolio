@@ -108,7 +108,7 @@ function Social() {
   return (
     <div
       className="
-      z-10 absolute md:relative
+      relative z-10 
       self-end 
       grid grid-flow-row gap-3 
       row-start-3 col-start-1
