@@ -14,18 +14,16 @@ export function Hero() {
   return (
     <div
       className="
-      container transition-all
-      grid gap-7 
-      grid-cols-1
+      container transition-all duration-500 ease-in-out
+      grid gap-7 grid-cols-1
       md:grid-cols-[1fr_40%]
-      m-auto mt-10 mb-10 
+      m-auto mt-10 mb-24
       px-2 md:px-0
       "
     >
       <Title />
       <Subtitle />
       <Social />
-
       <HeroImage />
     </div>
   );
@@ -33,7 +31,11 @@ export function Hero() {
 
 function Title() {
   return (
-    <div className="md:text-right">
+    <div
+      className="md:text-right
+      slidein
+      "
+    >
       <TextFit
         className={`hero-title text-[12vw] leading-[120%] md:leading-[85%] text-[#C0CAF5] ${barlow.className}`}
       >
@@ -49,6 +51,7 @@ function Subtitle() {
   return (
     <div
       className="
+      delayedfadein
       md:border md:border-accent md:border-l-0 md:border-r-0 md:border-b-0
       md:text-right md:col-start-1 md:row-start-2
       sm:text-lg md:text-xl lg:text-2xl
@@ -108,9 +111,10 @@ function Social() {
   return (
     <div
       className="
-      relative z-10 
-      self-end 
-      grid grid-flow-row gap-3 
+      staggeredslidein
+      relative z-10
+      self-end
+      grid grid-flow-row gap-3
       row-start-3 col-start-1
       md:row-start-1 md:col-start-2
       md:row-end-3
@@ -137,6 +141,7 @@ function HeroImage() {
       <div className="relative">
         <Image
           src={hero}
+          className="fadein"
           alt="Hero image"
           layout="responsive"
           width={0}
@@ -145,6 +150,7 @@ function HeroImage() {
 
         <div
           className="
+          delayedslideinright
           w-[11vw] h-[11vw] md:w-[5vw] md:h-[5vw] xl:w-[4vw] xl:h-[4vw]
           flex items-center content-center
           bg-[#9ece6a] rounded-full
