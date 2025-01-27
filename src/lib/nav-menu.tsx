@@ -39,6 +39,7 @@ function MenuItems({ className }: MenuItemsProps) {
         </Link>
       </li>
 
+      {/*
       <li>
         <Link onClick={setInActive} href="#showcase">
           Showcase
@@ -56,6 +57,7 @@ function MenuItems({ className }: MenuItemsProps) {
           Contact
         </Link>
       </li>
+      */}
     </ul>
   );
 }
