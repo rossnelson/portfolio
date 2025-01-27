@@ -34,7 +34,7 @@ export function About() {
         `}
       >
         <div className="container">
-          <div className="grid md:grid-cols-[60%,_40%] gap-12 p-2">
+          <div className="grid md:grid-cols-[60%,_1fr] gap-12 p-2">
             <Intersection>
               <div className="slideinleft">
                 <p>
