@@ -32,7 +32,8 @@ export function Hero() {
 function Title() {
   return (
     <div
-      className="md:text-right
+      className="
+      md:text-right
       slidein
       "
     >
@@ -60,8 +61,8 @@ function Subtitle() {
       md:pt-12
       "
     >
-      specializing in full stack cloud native platform development and event
-      driven architectures
+      Specializing in full stack cloud native platform development and
+      event-driven architectures.
     </div>
   );
 }
@@ -77,6 +78,7 @@ function SocialItem({ href, src, alt }: SocialItemProps) {
     <div
       className="
       w-[10vw] h-[10vw] md:w-[3.5vw] md:h-[3.5vw] xl:w-[4vw] xl:h-[4vw]
+      max-w-[69px] max-h-[69px]
       border-2 border-[#9ece6a] rounded-full 
       flex items-center justify-center box-border
       p-2
@@ -152,6 +154,7 @@ function HeroImage() {
           className="
           delayedslideinright
           w-[11vw] h-[11vw] md:w-[5vw] md:h-[5vw] xl:w-[4vw] xl:h-[4vw]
+          max-w-[69px] max-h-[69px]
           flex items-center content-center
           bg-[#9ece6a] rounded-full
           p-2

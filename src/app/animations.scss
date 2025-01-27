@@ -30,7 +30,6 @@
 }
 
 .staggeredslidein {
-
   @for $i from 1 through 10 {
     :nth-child(#{$i}n) {
       animation-name: slideInUp;
