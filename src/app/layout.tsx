@@ -14,9 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="tokyonight-storm">
-      <body
-        className={`antialiased`}
-      >
+      <body className={`antialiased`}>
         <Header />
 
         {children}

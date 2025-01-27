@@ -1,5 +1,6 @@
-export default function Home() {
+import { Hero } from "~/components/hero";
 
+export default function Home() {
   // layout
   // navigation
   //  // title and cv download
@@ -14,9 +15,5 @@ export default function Home() {
   // Contact
   // Footer
 
-  return (
-    <div>
-      <h1>Home</h1>
-    </div>
-  );
+  return <Hero />;
 }
