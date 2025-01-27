@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { NavMenu } from "~/lib/nav-menu";
 
 export function Header() {
   return (
@@ -11,23 +11,7 @@ export function Header() {
         </div>
 
         <div className="flex-none">
-          <ul className="font-bold text-[#2CC3DF] px-1 flex gap-4 items-center">
-            <li>
-              <Link href="#about">About</Link>
-            </li>
-
-            <li>
-              <Link href="#showcase">Showcase</Link>
-            </li>
-
-            <li>
-              <Link href="#training">Training</Link>
-            </li>
-
-            <li>
-              <Link href="#contact">Contact</Link>
-            </li>
-          </ul>
+          <NavMenu />
         </div>
       </div>
     </header>

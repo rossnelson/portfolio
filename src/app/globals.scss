@@ -4,10 +4,11 @@
 
 @import url('https://mshaugh.github.io/nerdfont-webfonts/build/inconsolatalgc.css');
 
-html {
-  font-size: 24px;
-}
-
 body {
+  font-size: 18px;
   font-family: Inconsolata LGC Nerd Font, monospace;
+
+  @media (min-width: 640px) {
+    font-size: 24px;
+  }
 }

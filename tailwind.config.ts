@@ -11,6 +11,21 @@ export default {
   daisyui: {
     themes: [
       {
+        "tokyonight-light": {
+          primary: "#2e7de9",
+          secondary: "#9854f1",
+          accent: "#0078a9",
+          neutral: "#e1e2e7",
+          "base-100": "#e7e9ec",
+          "base-200": "#d8dee9",
+          "base-300": "#ccd6e0",
+          info: "#0db9d7",
+          success: "#10b981",
+          warning: "#e0af68",
+          error: "#f7768e",
+        },
+      },
+      {
         "tokyonight-storm": {
           primary: "#7aa2f7",
           secondary: "#bb9af7",
