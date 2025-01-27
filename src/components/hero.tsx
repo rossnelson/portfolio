@@ -11,7 +11,7 @@ import { TextFit } from "~/lib/text-fit";
 import Image from "next/image";
 import Link from "next/link";
 
-const barlow = Barlow({ weight: "900" });
+const barlow = Barlow({ weight: "900", subsets: ["latin"] });
 
 export function Hero() {
   return (
