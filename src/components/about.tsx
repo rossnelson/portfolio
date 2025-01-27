@@ -91,6 +91,14 @@ export function About() {
                   <li>Team Leadership</li>
                   <li>Mentorship</li>
                 </ul>
+
+                <a
+                  href="https://drive.google.com/file/d/1X8CupdUsfcfgeuEETMyXmHeeNR-Z2TAJ/view?usp=drive_link"
+                  target="_blank"
+                  className="delayedfadein btn border-2 border-[#24283b] w-full mt-10"
+                >
+                  Download My Resume
+                </a>
               </div>
             </Intersection>
           </div>
