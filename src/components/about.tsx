@@ -68,7 +68,7 @@ export function About() {
 
             <Intersection>
               <div className="slideinright">
-                <h2 className="font-bold mb-5">Core Competenties</h2>
+                <h2 className="font-bold mb-5">Core Competencies</h2>
 
                 <ul className="mb-10">
                   <li>Front-End Development</li>
