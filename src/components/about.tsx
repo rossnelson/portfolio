@@ -38,30 +38,29 @@ export function About() {
             <Intersection>
               <div className="slideinleft">
                 <p>
-                  Over the last 15+ years, I’ve worked to support my teams in
-                  designing and developing scalable, cloud-based, event-driven
-                  API systems capable of handling high-volume requests. By
-                  implementing User friendly UIs, Efficiency focused
-                  Apis/Workflows, and DevOps best practices we set our sights on
-                  increasing deployment efficiency and enhanced system
-                  reliability.
+                  For over 15 years, I’ve been helping teams design and develop
+                  scalable, cloud-based, event-driven API systems that handle
+                  high-volume requests. My focus has always been on creating
+                  user-friendly UIs, efficiency-driven APIs and workflows, and
+                  applying DevOps best practices to improve deployment speed and
+                  system reliability.
                 </p>
                 <br />
                 <p>
-                  I am passionate about mentoring and have guided engineers at
+                  I’m passionate about mentoring and have guided engineers at
                   all levels, fostering a culture of continuous learning and
-                  growth. Ive worked to improve productivity by initiating pair
-                  programming sessions, peer review processes, and regular
-                  knowledge-sharing sessions, which go a long way to improve
-                  code quality and team collaboration.
+                  growth. I’ve helped boost productivity through pair
+                  programming, peer reviews, and regular knowledge-sharing
+                  sessions—practices that not only improve code quality but also
+                  strengthen team collaboration.
                 </p>
                 <br />
                 <p>
-                  I thrive in fast-paced, dynamic environments and am committed
-                  to continuous learning. Continually exploring emerging
-                  technologies repeatedly assists in solving complex technical
-                  challenges, resulting in vastly improved observability and
-                  maintainability in both local and deployed environments.
+                  I thrive in fast-paced, dynamic environments and am always
+                  eager to learn. Exploring new technologies has consistently
+                  helped me tackle complex technical challenges, leading to
+                  better observability and maintainability in both local and
+                  deployed environments.
                 </p>
               </div>
             </Intersection>
