@@ -90,7 +90,7 @@ function Menu() {
         </button>
 
         <MenuItems
-          className={`${!active && "hidden"} absolute menu bg-base-200 right-0 rounded-xl p-2 md:hidden`}
+          className={`${!active && "hidden"} absolute z-10 menu bg-base-200 right-0 rounded-xl p-2 md:hidden`}
         />
       </div>
 

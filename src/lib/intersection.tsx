@@ -4,22 +4,23 @@ import { useState, useEffect, useRef } from "react";
 
 type IntersectionProps = {
   children: React.ReactNode;
+  classSuffix: string;
 };
 
-export function Intersection({ children }: IntersectionProps) {
+export function Intersection({ children, classSuffix }: IntersectionProps) {
   const [isVisible, setIsVisible] = useState(false);
   const elementRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        console.log("is intersecting", entry.isIntersecting);
+        console.log("entry", entry.isIntersecting);
         setIsVisible(entry.isIntersecting);
       },
       {
         root: null, // Use the browser viewport as the root
         rootMargin: "0px", // No margin around the viewport
-        threshold: 0.5, // Trigger when 50% of the element is visible
+        threshold: 0.01, // Trigger when 50% of the element is visible
       },
     );
 
@@ -34,11 +35,13 @@ export function Intersection({ children }: IntersectionProps) {
     };
   }, []);
 
+  const stateClassName = isVisible
+    ? `visible-then ${classSuffix}`
+    : "not-visible";
+  const className = `intersection-observed ${stateClassName}`;
+
   return (
-    <div
-      ref={elementRef}
-      className={`intersection-observed ${isVisible ? "visible" : ""}`}
-    >
+    <div ref={elementRef} className={className}>
       {children}
     </div>
   );
