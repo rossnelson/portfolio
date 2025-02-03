@@ -75,7 +75,7 @@ export function About() {
 
               <h2 className="font-bold mb-5">Core Competencies</h2>
 
-              <ul className="mb-10">
+              <ul className="mb-10 text-lg">
                 <li>Front-End Development</li>
                 <li>Back-End Engineering</li>
                 <li>DevOps + CI/CD</li>
@@ -83,14 +83,15 @@ export function About() {
                 <li>Event-Driven Architectures</li>
               </ul>
 
-              <ul className="mb-10">
+              <ul className="mb-10 text-lg">
                 <li>Performance Improvement</li>
                 <li>Platform Optimization</li>
                 <li>System Design</li>
                 <li>System Enhancement</li>
                 <li>Cost Control</li>
               </ul>
-              <ul>
+
+              <ul className="text-lg">
                 <li>Problem-Solving</li>
                 <li>Software Engineering Leadership</li>
                 <li>Team Leadership</li>
