@@ -37,7 +37,7 @@ export function TextFit({ children, className }: TextFitParams) {
     window.addEventListener("resize", adjustFontSize);
 
     return () => window.removeEventListener("resize", adjustFontSize);
-  }, []);
+  }, [fontSize]);
 
   const containerClasses = `${className}`;
   const textClasses = ` whitespace-nowrap`;

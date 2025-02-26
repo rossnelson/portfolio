@@ -12,6 +12,8 @@ export function Intersection({ children, classSuffix }: IntersectionProps) {
   const elementRef = useRef(null);
 
   useEffect(() => {
+    const ref = elementRef.current;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
@@ -23,14 +25,13 @@ export function Intersection({ children, classSuffix }: IntersectionProps) {
       },
     );
 
-    if (elementRef.current) {
-      observer.observe(elementRef.current);
+    if (ref) {
+      observer.observe(ref);
     }
 
     return () => {
-      if (elementRef.current) {
-        observer.unobserve(elementRef.current);
-      }
+      if (!ref) return;
+      observer.unobserve(ref);
     };
   }, []);
 

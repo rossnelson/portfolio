@@ -51,7 +51,7 @@ export const ModalProvider = ({
 
 // Props for the Modal Trigger
 interface ModalTriggerProps {
-  children: ReactElement<any>; // Use ReactElement<any> to accept any React element
+  children: ReactElement;
   onClick?: (e: MouseEvent<HTMLElement>) => void;
 }
 
@@ -85,6 +85,21 @@ interface ModalProps {
   className?: string;
 }
 
+// Handle closing the modal
+const wrapHandleClose =
+  (
+    controlledIsOpen: boolean | undefined,
+    contextModal: ModalContextType,
+    onClose: (() => void) | undefined,
+  ) =>
+  (): void => {
+    if (controlledIsOpen !== undefined && onClose) {
+      onClose();
+      return;
+    }
+    contextModal.closeModal();
+  };
+
 // The actual Modal component
 export const Modal = ({
   children,
@@ -108,6 +123,8 @@ export const Modal = ({
     setIsOpen(contextModal.isOpen);
   }, [controlledIsOpen, contextModal.isOpen]);
 
+  const handleClose = wrapHandleClose(controlledIsOpen, contextModal, onClose);
+
   // Close modal when Escape key is pressed
   useEffect(() => {
     const handleEscKey = (event: KeyboardEvent): void => {
@@ -117,20 +134,11 @@ export const Modal = ({
     };
 
     // Need to cast to any because the DOM types don't match React's event types
-    window.addEventListener("keydown", handleEscKey as any);
+    window.addEventListener("keydown", handleEscKey);
     return () => {
-      window.removeEventListener("keydown", handleEscKey as any);
+      window.removeEventListener("keydown", handleEscKey);
     };
-  }, [isOpen]);
-
-  // Handle closing the modal
-  const handleClose = (): void => {
-    if (controlledIsOpen !== undefined && onClose) {
-      onClose();
-      return;
-    }
-    contextModal.closeModal();
-  };
+  }, [isOpen, handleClose]);
 
   // Handle clicking outside the modal
   const handleOutsideClick = (e: MouseEvent<HTMLDivElement>): void => {
