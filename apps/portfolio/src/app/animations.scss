@@ -1,6 +1,6 @@
 .fadein {
   animation-name: fadeIn;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-delay: 0s;
   animation-fill-mode: both;
 }
@@ -57,7 +57,7 @@
 .slideinleft {
   animation-name: slideInLeft;
   animation-duration: 0.4s;
-  animation-delay: 0.7s;
+  animation-delay: 0s;
   animation-fill-mode: both;
 }
 
@@ -77,7 +77,7 @@
 .slideinright {
   animation-name: slideInRight;
   animation-duration: 0.4s;
-  animation-delay: 0.7s;
+  animation-delay: 0s;
   animation-fill-mode: both;
 }
 

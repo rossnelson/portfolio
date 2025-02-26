@@ -1,0 +1,48 @@
+# Email Integration Platform for Insurance Communications
+
+One of the projects I am most proud of is developing an email integration system for an insurance technology platform that brought out-of-band communications back into the platform workflow. During my six-month tenure as an IC, I successfully integrated Nylas into their serverless architecture, enhancing visibility between carriers and brokers.
+
+## Motivation & Problem Statement
+
+Before this integration, the insurance platform faced challenges with tracking communications between carriers and brokers that occurred outside the platform via email. This created visibility gaps and made it difficult to maintain a complete record of client interactions. Our goal was to seamlessly incorporate these external communications into the platform's conversation flow to provide a comprehensive view of all interactions.
+
+## Technical Details & Architecture
+
+As a senior engineer, I focused on integrating new functionality while preserving existing system behavior and maintaining backward compatibility.
+
+### Backend Architecture
+
+- **Event Processing Pipeline**: Implemented a robust processing system using:
+  - Lambda functions to process incoming webhooks and platform-generated events
+  - Step Functions to orchestrate complex workflows including email threading, user notifications, and data synchronization
+  - Kinesis streams to manage high-throughput event processing with automated scaling
+  - Dead-letter queues and retry mechanisms for handling failed events
+- **Data Management**: Utilized Aurora as the primary datastore with dry-rb for validation and data structure definitions
+- **Message Processing**: Implemented flexible duck typing for handling various message types, with routing based on type configuration
+- **Email Integration**: Built real-time Nylas webhook handlers for instant conversation updates and integrated the Nylas Ruby SDK for outbound messages
+- **Testing Strategy**: Developed a replacement modules pattern for dependency injection, enabling comprehensive unit testing through mocking
+- **Communication Service**: Expanded the service layer to handle multiple message types while maintaining backward compatibility
+
+### System Integration
+
+- **Event Processing**: Created Lambda functions to handle Nylas webhooks and process email events in real-time
+- **State Management**: Implemented Step Functions to orchestrate complex email processing workflows
+- **Data Synchronization**: Developed bidirectional sync between Nylas and platform conversation models
+- **Error Handling**: Built robust retry mechanisms and dead letter queues for failed email processing attempts
+
+## Challenges & Key Contributions
+
+- **Legacy Code Integration**: Successfully integrated new features while maintaining existing functionality in a complex codebase
+- **Complex State Management**: Handled various email thread states and merged them seamlessly with platform conversations
+- **Performance Optimization**: Implemented efficient event processing to handle high email volumes without impacting system performance
+
+## Impact & Outcome
+
+- Successfully brought out-of-band email communications back into the platform
+- Improved visibility and tracking of client communications
+- Seamless integration with existing conversation flows
+- Maintained system performance while processing additional email volume
+
+## Reflections
+
+This project demonstrated my ability to quickly understand and enhance complex systems while working within existing architectural constraints. It reinforced my expertise in serverless architectures and event-driven systems, while highlighting the importance of maintaining system integrity during feature additions. The Nylas integration provided significant value by bringing previously invisible communications into the platform ecosystem without disrupting existing workflows or performance.

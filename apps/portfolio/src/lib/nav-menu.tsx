@@ -39,13 +39,13 @@ function MenuItems({ className }: MenuItemsProps) {
         </Link>
       </li>
 
-      {/*
       <li>
         <Link onClick={setInActive} href="#showcase">
           Showcase
         </Link>
       </li>
 
+      {/*
       <li>
         <Link onClick={setInActive} href="#training">
           Training

@@ -14,7 +14,6 @@ export function Intersection({ children, classSuffix }: IntersectionProps) {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        console.log("entry", entry.isIntersecting);
         setIsVisible(entry.isIntersecting);
       },
       {

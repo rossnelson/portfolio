@@ -1,5 +1,6 @@
 import { About } from "~/components/about";
 import { Hero } from "~/components/hero";
+import { ProjectThumbs } from "~/components/projectthumbs";
 
 export default function Home() {
   // Showcase
@@ -11,6 +12,7 @@ export default function Home() {
     <>
       <Hero />
       <About />
+      <ProjectThumbs />
     </>
   );
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "./markdown.scss";
 import "./globals.scss";
 import "./animations.scss";
 import { Header } from "~/components/header";

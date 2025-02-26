@@ -1,0 +1,52 @@
+One of my proudest achievements is **TrustHab**, an **IoT platform for property managers** that enables real-time monitoring and control of environmental systems like **HVAC, lighting, and water usage**. The platform continues to operate in production, delivering significant **energy savings and operational efficiencies** for multi-unit property owners.
+
+### **Motivation & Problem Statement**
+
+Before TrustHab, property managers lacked **visibility into their properties' energy efficiency** and environmental conditions. We set out to **build a scalable, event-driven system** that could ingest, process, and act on **IoT sensor data in real time**, with the goal of **improving energy efficiency and reducing costs**.
+
+### **Technical Details & Architecture**
+
+As **lead architect and full-stack engineer**, I spearheaded both **backend and frontend development**, creating a seamless experience across all system layers.
+
+### **Backend Architecture**
+
+- **Event-Driven System**: Leveraged **Kafka and RabbitMQ** to process **millions of IoT sensor events daily**.
+- **Scalability & Cloud Infrastructure**: Deployed on **AWS with Kubernetes (EKS)**, utilizing **Event Driven Architecture** for scalability and the **ELK stack** for ****metrics and observability.
+- **Automation & Rule-Based Processing**: Developed a **rule engine** enabling property managers to create custom automation rules (e.g., *"Turn off HVAC if a unit is vacant for 3+ hours"*).
+- **API Development & Integrations**: Built **REST APIs** for frontend and mobile applications, integrated **Zwavejs** for edge device communication.
+- **Security & Compliance**: Implemented **OAuth2 authentication, role-based access control (RBAC), and encryption at rest (AWS KMS) and in transit (TLS)**.
+
+### **Frontend & Edge Development**
+
+- **React Mobile Web App**: Created a **mobile-friendly React web application** for **installers in the field**.
+- **Gateway Provisioning & Hierarchy Assignment**: Engineered the web app to connect directly to **IoT gateways via AP mode**, enabling **installers to provision gateways** and assign them to appropriate **property hierarchy levels**.
+- **Edge Device Connectivity**: Implemented **flow control and robust unit testing** to ensure reliable **gateway provisioning and network transitions** between AP mode and standard operation.
+- **Long-Term Stability**: The **mobile provisioning app remains in production** and has needed **zero updates or bug fixes**, demonstrating the success of our **emphasis on unit testing, flow control, and robust system design**.
+
+### At the Edge
+
+- **Mesh Communication Management:** Using a Z-Wave controller, we stationed gateways throughout properties' common areas and maintenance closets. Devices communicated with the gateway, which brokered commands and events.
+- **On-Premise Gateway:** We developed a unique, easily deployable gateway solution. Though an edge device, it was powerful—running both a dockerized Node.js application (serving as a message broker and rule engine) and a Golang binary tool for managing OTA updates. The Node.js application was purposefully designed with three core classes—Sources, Devices, and Integrations—connected by an RxJS observer.
+    - **Sources:** This layer handled incoming commands and outgoing events through both RabbitMQ and REST endpoints. A planned future optimization would migrate all communication to the MQTT protocol.
+    - **Devices:** Our installations supported multiple device types and models. The Devices class implemented a base configuration handler that converted commands from Sources into integration-specific language using device make and model as the integration key. We could also add rules and custom hooks to commands or events as they passed through the device object.
+    - **Integrations:** Incoming commands were routed through make/model-specific device configurations. Each make and model used a designated Integration—for example, the **Honeywell/TH6320ZW2003** used the Z-Wave integration, while others connected via WiFi. Each integration managed its device connections and handled command/event normalization between devices and the gateway.
+    - **Rules Engine:** One key feature was dehumidification logic. When enabled, it monitored humidity events and adjusted air temperature to reduce humidity when it exceeded thresholds. All parameters were configurable through the platform's admin portal, and the thermostat returned to its previous setting once humidity reached acceptable levels.
+    - **Extensions:** Features like Lock Pin Manager, Pairing Mode, Inclusion, Exclusion, and Backup were implemented as extensions that enhanced core class behaviors. These extensions hooked into the class message handler like middleware, responding to relevant commands or events.
+    - **OTA Rollout:** We implemented a staged rollout system to target specific devices or properties with updates. This allowed us to push new gateway code to production regularly and test in real-world conditions before full deployment.
+
+### **Challenges & Key Contributions**
+
+- **Scaling the System**: When early versions faced high event throughput challenges, I led an **optimization effort** using **batching and backpressure techniques**, achieving a **40%** reduction in processing time.  
+- **Cross-Team Leadership**: Collaborated closely with **project managers, UX designers, and frontend engineers** to deliver a seamless user experience. **Mentored junior engineers** in distributed system patterns.  
+- **Operational Monitoring & Debugging**: Implemented **Grafana dashboards and Datadog monitoring** to enable quick anomaly detection and proactive issue resolution.  
+
+### **Impact & Outcome**
+
+- **TrustHab became a flagship product**, now serving **thousands of properties across the U.S.**  
+- **Clients achieved up to 20% reduction in energy costs** through optimized HVAC usage.  
+- **I was promoted to Chief Architect** based on my leadership and technical contributions.  
+- **The provisioning system has maintained production stability** without updates, validating our focus on **robust testing and architecture**.  
+
+### **Reflections**
+
+This project transformed my career, representing my first experience with **full technical ownership of a large-scale system** while **growing as a leader and mentor**. It deepened my passion for **distributed systems, real-time processing, and scalable architecture**, while fostering appreciation for **frontend-edge development** in IoT ecosystems.

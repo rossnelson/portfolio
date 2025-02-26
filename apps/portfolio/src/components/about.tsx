@@ -1,31 +1,15 @@
-import { Barlow } from "next/font/google";
-import { Intersection } from "~/lib/intersection";
+"use client";
 
-const barlow = Barlow({ weight: "900", subsets: ["latin"] });
+import { Intersection } from "~/lib/intersection";
+import { SectionHeader } from "./section-header";
+
+import Competencies from "./about-competencies.mdx";
+import Body from "./about-body.mdx";
 
 export function About() {
   return (
     <>
-      <div
-        id="about"
-        data-theme="tokyonight-light"
-        className={`
-        relative
-        h-32
-        overflow-hidden
-        transition-all duration-500 ease-in-out 
-        text-[#24283b] text-[178px] ${barlow.className}
-      `}
-      >
-        <div
-          className="
-          delayedfadein
-          absolute top-[-115px] left-[-20px] whitespace-nowrap
-          "
-        >
-          about.about.about.about.about.about.
-        </div>
-      </div>
+      <SectionHeader title="about." theme="light" />
 
       <div
         data-theme="tokyonight-light"
@@ -35,68 +19,21 @@ export function About() {
         `}
       >
         <div className="container">
-          <div className="grid md:grid-cols-[60%,_1fr] gap-12 p-2">
+          <div className="markdown text-lg grid md:grid-cols-[60%,_1fr] gap-12 p-2">
             <Intersection classSuffix="slideinleft">
-              <p>
-                For over 15 years, I’ve been helping teams design and develop
-                scalable, cloud-based, event-driven API systems that handle
-                high-volume requests. My focus has always been on creating
-                user-friendly UIs, efficiency-driven APIs and workflows, and
-                applying DevOps best practices to improve deployment speed and
-                system reliability.
-              </p>
-              <br />
-              <p>
-                I’m passionate about mentoring and have guided engineers at all
-                levels, fostering a culture of continuous learning and growth.
-                I’ve helped boost productivity through pair programming, peer
-                reviews, and regular knowledge-sharing sessions—practices that
-                not only improve code quality but also strengthen team
-                collaboration.
-              </p>
-              <br />
-              <p>
-                I thrive in fast-paced, dynamic environments and am always eager
-                to learn. Exploring new technologies has consistently helped me
-                tackle complex technical challenges, leading to better
-                observability and maintainability in both local and deployed
-                environments.
-              </p>
+              <Body />
             </Intersection>
 
             <Intersection classSuffix="slideinright">
               <a
                 href="https://drive.google.com/file/d/1X8CupdUsfcfgeuEETMyXmHeeNR-Z2TAJ/view?usp=drive_link"
                 target="_blank"
-                className="delayedfadein btn border-2 border-[#24283b] w-full mb-12 text-lg"
+                className=" btn border-2 border-[#24283b] w-full text-lg"
               >
                 Download My Resume
               </a>
 
-              <h2 className="font-bold mb-5">Core Competencies</h2>
-
-              <ul className="mb-10 text-lg">
-                <li>Front-End Development</li>
-                <li>Back-End Engineering</li>
-                <li>DevOps + CI/CD</li>
-                <li>Cloud Native Infrastructure</li>
-                <li>Event-Driven Architectures</li>
-              </ul>
-
-              <ul className="mb-10 text-lg">
-                <li>Performance Improvement</li>
-                <li>Platform Optimization</li>
-                <li>System Design</li>
-                <li>System Enhancement</li>
-                <li>Cost Control</li>
-              </ul>
-
-              <ul className="text-lg">
-                <li>Problem-Solving</li>
-                <li>Software Engineering Leadership</li>
-                <li>Team Leadership</li>
-                <li>Mentorship</li>
-              </ul>
+              <Competencies />
             </Intersection>
           </div>
         </div>

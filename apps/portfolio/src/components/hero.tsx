@@ -106,7 +106,7 @@ function SocialItem({ href, src, alt }: SocialItemProps) {
       "
     >
       <Link target="_blank" href={href}>
-        <Image src={src} alt={alt} layout="responsive" width={0} height={0} />
+        <Image src={src} alt={alt} width={0} height={0} />
       </Link>
     </div>
   );
@@ -229,7 +229,7 @@ function Globe() {
           p-2
           "
       >
-        <Image src={globe} alt="globe" layout="responsive" />
+        <Image src={globe} alt="globe" />
       </div>
     </div>
   );

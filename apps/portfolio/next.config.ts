@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import createMDX from "@next/mdx";
 
 const nextConfig: NextConfig = {
   /**
@@ -7,6 +8,8 @@ const nextConfig: NextConfig = {
    * @see https://nextjs.org/docs/app/building-your-application/deploying/static-exports
    */
   output: "export",
+
+  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
 
   /**
    * Set base path. This is the slug of your GitHub repository.
@@ -26,4 +29,9 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+const withMDX = createMDX({
+  // Add markdown plugins here, as desired
+});
+
+// Merge MDX config with Next.js config
+export default withMDX(nextConfig);

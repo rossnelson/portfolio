@@ -1,0 +1,198 @@
+// Markdown Typography - Spacing Only
+// This assumes you already have your own color and font size definitions
+
+// Base variables for consistent spacing
+$base-line-height: 1.6;
+$spacing-unit: 1.5rem;
+
+.markdown {
+  // Base text spacing
+  line-height: $base-line-height;
+
+  // Headings spacing
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+    line-height: 1.25;
+    margin-top: $spacing-unit * 2;
+    margin-bottom: $spacing-unit * 0.5;
+  }
+
+  h1 {
+    margin-top: $spacing-unit;
+    padding-bottom: $spacing-unit * 0.3;
+  }
+
+  h2 {
+    padding-bottom: $spacing-unit * 0.3;
+  }
+
+  // Paragraphs spacing
+  p {
+    margin-top: 0;
+    margin-bottom: $spacing-unit;
+  }
+
+  br {
+    margin-top: 0;
+    margin-bottom: $spacing-unit;
+  }
+
+  // Lists spacing
+  ul,
+  ol {
+    padding-left: $spacing-unit;
+    margin-top: 0;
+  }
+
+  ol li {
+    list-style-type: decimal;
+  }
+
+  ul li {
+    list-style-type: disc;
+  }
+
+  li {
+
+    >p {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    >ul,
+    >ol {
+      margin-top: $spacing-unit * 0.25;
+      margin-bottom: $spacing-unit * 0.5;
+    }
+  }
+
+  // Blockquotes spacing
+  blockquote {
+    margin: $spacing-unit 0;
+    padding: 0 $spacing-unit;
+
+    > :first-child {
+      margin-top: 0;
+    }
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // Code spacing
+  code {
+    padding: ($spacing-unit * 0.1) ($spacing-unit * 0.2);
+  }
+
+  pre {
+    padding: $spacing-unit;
+    margin: $spacing-unit 0;
+
+    code {
+      padding: 0;
+      line-height: 1.45;
+    }
+  }
+
+  // Tables spacing
+  table {
+    margin: $spacing-unit 0;
+
+    th,
+    td {
+      padding: ($spacing-unit * 0.5) $spacing-unit;
+    }
+  }
+
+  // Horizontal rule spacing
+  hr {
+    height: $spacing-unit * 0.1;
+    padding: 0;
+    margin: ($spacing-unit) 0;
+  }
+
+  // Images spacing
+  img {
+    margin: $spacing-unit 0;
+  }
+
+  // Task lists spacing
+  .task-list-item {
+    input[type="checkbox"] {
+      margin: 0 ($spacing-unit * 0.5) 0 (-$spacing-unit * 1.5);
+    }
+  }
+
+  // Nested content spacing
+  // Proper vertical rhythm for nested elements
+  *+ {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-top: $spacing-unit * 2;
+    }
+  }
+
+  // Tight spacing for adjacent headings
+  h1+h2,
+  h2+h3,
+  h3+h4,
+  h4+h5,
+  h5+h6 {
+    margin-top: $spacing-unit;
+  }
+
+  // Slightly more space after lists and blockquotes before headings
+  ul+h2,
+  ol+h2,
+  blockquote+h2,
+  ul+h3,
+  ol+h3,
+  blockquote+h3 {
+    margin-top: $spacing-unit * 1.75;
+  }
+
+  // Ensure tight spacing for lists inside lists
+  li {
+
+    ul,
+    ol {
+      margin-bottom: ($spacing-unit * 0.5);
+    }
+  }
+
+  // Proper indentation for definition lists
+  dl {
+    margin-top: 0;
+    margin-bottom: $spacing-unit;
+  }
+
+  dt {
+    margin-top: $spacing-unit;
+    margin-bottom: ($spacing-unit * 0.25);
+  }
+
+  dd {
+    margin-left: $spacing-unit * 2;
+    margin-bottom: $spacing-unit * 0.5;
+  }
+
+  // Spacing for advanced markdown elements
+  details {
+    margin: $spacing-unit 0;
+
+    summary {
+      padding: ($spacing-unit * 0.25) 0;
+    }
+  }
+}

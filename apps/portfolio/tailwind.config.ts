@@ -13,6 +13,7 @@ export default {
     themes: [
       {
         "tokyonight-light": {
+          opposite: "#24283b",
           primary: "#2e7de9",
           secondary: "#9854f1",
           accent: "#0078a9",
@@ -28,6 +29,7 @@ export default {
       },
       {
         "tokyonight-storm": {
+          opposite: "#e7e9ec",
           primary: "#7aa2f7",
           secondary: "#bb9af7",
           accent: "#565F89",
